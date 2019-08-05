@@ -1,0 +1,10 @@
+*{margin: 0; padding: 0; box-sizing: border-box}
+body{background: #ddd}
+li{list-style: none}
+header{
+    background: #fff;border-bottom: 1px #ddd solid; padding: 20px
+}
+.left{ width: 200px; float: left; background: #555;  height: 100%;}
+.left li{ width: 100%; padding: 20px; border-bottom: 1px #ddd solid}
+.left li a{color: #fff; font-size: 16px;}
+.right{ margin-left: 220px; background: #fff; padding: 20px;height: 100%;}
