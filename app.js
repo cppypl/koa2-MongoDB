@@ -5,10 +5,11 @@ const path=require('path')
 const body=require('koa-better-body')
 const koaSession= require('koa-session')
 const ejs= require('koa-ejs')
+const cors= require('koa-cors')
 
 let app=new koa()
 app.listen(8000)
-
+console.log('服务运行在8000端口')
 
 
 
@@ -26,7 +27,7 @@ ejs(app,{
 app.use(body({
     uploadDir:'./upload'
 }))
-
+app.use(cors())
 // session
 app.keys=['QWERTYUIOPAasdfghjkl:"zxcvbnm<>?','asdfghjkl741852963/8*-:','！@#￥%……&*（）——WSDRFTGYHUJIKL']//越多越好
 app.use(koaSession({
@@ -58,8 +59,11 @@ app.use(koaSession({
 //     // ctx.response.body='404'
 // })
 
+
+
 // 路由
 let router=new Router()
+
 router.use('/admin',require('./routers/admin'))
 router.use('',require('./routers/www'))
 app.use(router.routes())

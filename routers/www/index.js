@@ -1,6 +1,4 @@
 const Router= require('koa-router')
-
-
 let router=new Router()
 
 router.get('/',async ctx=>{
@@ -10,14 +8,10 @@ router.get('/',async ctx=>{
     console.log(data);
     
     console.timeEnd('11');
-    ctx.body="list"
+    ctx.body="服务端渲染的首页"
 })
 
 
 
-
-
-router.use('/con',require('./con'))
-router.use('/edit',require('./edit'))
 
 module.exports=router.routes()
